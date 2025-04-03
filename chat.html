@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Boxicons for icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <!-- External CSS Files -->
+    <link rel="stylesheet" href="style/navbar.css">
+    <link rel="stylesheet" href="style/chat.css">
+    
+    <title>Chat</title>
+</head>
+
+<body>
+
+    <!-- Loader Section -->
+    <div class="loader-container">
+        <div class="logo"><p style="color: #fff; font-weight: 600; font-size: 18px;">vironica<span style="opacity: .6;">.ai</span></p></div>
+        <div class="loader-text">Loading<span class="dots"></span></div>
+    </div>
+
+    <!-- Header Section -->
+    <header class="header">
+        <div class="header__container">
+            <p style="color: #ffff; font-weight: 600;font-size: 18px;">vironica<span style="opacity: .6;">.ai</span></p>
+            <a href="#" class="header__logo"></a>
+            <div class="header__toggle">
+                &nbsp;&nbsp;
+                <i class='bx bx-cog' id="header-toggle"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sidebar Navigation -->
+    <div class="nav" id="navbar">
+        <nav class="nav__container">
+            <div>
+
+                <!-- User Profile -->
+                <a href="#" class="nav__link nav__logo">
+                    <i class='bx bxs-user nav__icon'></i>
+                    <span class="nav__logo-name">Hi, Username</span>
+                </a>
+
+                <!-- Navigation Menu -->
+                <div class="nav__list">
+
+                    <!-- Chat History -->
+                    <div class="nav__items nav__link">    
+                        <i class='bx bx-history nav__icon'></i>
+                        <span class="nav__name">Chat History</span>
+                    </div>
+
+                    <div class="nav__items nav__link">    
+                        <i class='bx bx-history nav__icon'></i>
+                        <span class="nav__name">Chat History</span>
+                    </div>
+
+                    <div class="nav__items nav__link">    
+                        <i class='bx bx-history nav__icon'></i>
+                        <span class="nav__name">Chat History</span>
+                    </div>
+
+                    <div class="nav__items nav__link"  style="margin-top: 15px; color: rgb(255, 202, 202);" id="clear-chat-btn">    
+                        <i class='bx bx-message-alt-x nav__icon'></i>
+                        <span class="nav__name" >Clear Chat</span>
+                    </div>
+                    <div class="nav__items nav__link"style="background-color: #696969; padding:10px;border-radius:10px;">    
+                        <i class='bx bx-error-circle nav__icon'></i>
+                        <span class="nav__name" style="font-size: 10px;">Clearing chat will led to <br>clear your memory also</span>
+                    </div>
+
+                    <!-- About Section -->
+                    <div class="nav__items nav__link" style="margin-top: 15px;">    
+                        <i class='bx bx-bowl-hot nav__icon'></i>
+                        <span class="nav__name">About</span>
+                    </div>
+
+                    <!-- FAQs Section -->
+                    <div class="nav__items nav__link">    
+                        <i class='bx bx-question-mark nav__icon'></i>
+                        <span class="nav__name">FAQs</span>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Logout Button -->
+            <a href="#" class="nav__link nav__logout" id="logout-btn" >
+                <i class='bx bx-log-out nav__icon'></i>
+                <span class="nav__name">Log Out</span>
+            </a>
+        </nav>
+    </div>
+
+    <!-- Chat Input Container -->
+    <div class="chat-input-container">
+
+        <!-- Emoji Row (Left) & Toggle Button (Right) -->
+        <div class="emoji-toggle-row">
+            <div class="emoji-container">
+                <img src="images/angry.png" class="emoji-icon">
+                <img src="images/laugh.png" class="emoji-icon">
+                <img src="images/sassy.png" class="emoji-icon">
+                <img src="images/caring.png" class="emoji-icon">
+            </div>
+
+            <!-- Toggle Button (Switch Between Voice & Text) -->
+            <button class="toggle-mode" id="toggle-mode">
+                <i class='bx bx-text active'></i> 
+                <i class="fa-solid fa-volume-high inactive"></i>
+            </button>
+        </div>
+
+        <!-- Chat Input Field & Send Button -->
+        <div class="input-box">
+            <input type="text" id="chat-input" placeholder="Type a message..." autocomplete="off" />
+            <!-- <button id="send-btn"><i class='bx bx-send input_items'></i></button> -->
+        </div>
+    </div>
+
+    <!-- Chat Messages Container -->
+    <div class="chat-container" id="chat-container">
+
+        <div class="welcome-message">
+            How can i help you??
+        </div>
+
+    </div>
+
+    <!-- JavaScript Files -->
+    <script type="module"  src="js/script.js"></script>
+    <script src="js/ui.js"></script>
+
+</body>
+</html>

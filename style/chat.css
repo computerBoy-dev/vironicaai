@@ -1,0 +1,222 @@
+.chat-input-container {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    max-width: 500px;
+    background: #1e1e1e;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    border: 1px solid #333;
+    display: flex;
+    flex-direction: column; /* Stacking emojis & input */
+    align-items: center;
+}
+
+/* Emoji & Toggle Row */
+.emoji-toggle-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-bottom: 20px;
+    align-items: center;
+}
+
+/* Emoji Container (Left) */
+.emoji-container {
+    display: flex;
+    gap: 15px;
+}
+
+/* Emoji Icons */
+.emoji-icon {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-radius: 50%; /* Rounded */
+}
+
+/* Active Emoji */
+.emoji-icon.active {
+    transform: scale(1.3); /* Bigger */
+    background: rgba(255, 255, 255, 0.2); /* Light Highlight */
+    border: 2px solid #ffcc00; /* Yellow Border */
+    padding: 6px; /* Adjust padding */
+}
+/* Toggle Button (Right Side) */
+/* Toggle Button */
+.toggle-mode {
+    background: #222;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    padding: 8px 12px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Space between icons */
+}
+
+/* Active Icon */
+.toggle-mode i.active {
+    color: #ffcc00; /* Highlighted color */
+    font-size: 24px; /* Bigger */
+    transition: 0.3s;
+}
+
+/* Inactive Icon */
+.toggle-mode i.inactive {
+    color: #777; /* Faded */
+    font-size: 18px; /* Smaller */
+    transition: 0.3s;
+}
+
+
+/* Input Box */
+.input-box {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background: #292929;
+    padding: 10px;
+    border-radius: 25px;
+    border: 1px solid #444;
+    position: relative;  /* Ensure relative positioning */
+}
+
+.input-box input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 16px;
+    padding: 5px;
+    font-family: poppins;
+}
+
+/* Send Button */
+#send-btn {
+    color: #fff;
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s ease-in-out;
+}
+
+/* Responsive Fixes */
+@media screen and (max-width: 480px) {
+    .input-box {
+        padding: 8px; /* Reduce padding for small screens */
+    }
+
+    .input-box input {
+        font-size: 14px; /* Adjust font size */
+        padding: 8px 12px; /* Adjust input padding */
+    }
+
+    #send-btn {
+        font-size: 20px; /* Slightly smaller button */
+        padding: 6px;
+    }
+}
+.chat-container {
+    padding: 10px;
+    overflow-y: auto;
+    max-height: 75vh;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Date Divider */
+.date-divider {
+    text-align: left;
+    color: #bbb;
+    font-size: 12px;
+    margin: 10px 0;
+    position: relative;
+}
+/* Right Side Dash */
+.date-divider::after {
+    content: "—";
+    font-size: 14px;
+    color: #bbb;
+    margin-left: 8px;
+}
+
+/* Common Chat Message Style */
+.chat-messages {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+/* Incoming Messages (Left Side) */
+.incoming {
+    align-self: flex-start;
+}
+
+.incoming .message-content {
+    background: #333;
+    color: white;
+    padding: 6px 12px; /* ✅ Minimal padding */
+    border-radius: 18px; /* ✅ Circular look */
+    border-bottom-left-radius: 4px;
+    font-size: 14px; /* ✅ Smaller text */
+}
+
+/* Outgoing Messages (Right Side) */
+.outgoing {
+    align-self: flex-end;  /* ✅ Properly aligns message to the right */
+}
+
+.outgoing .message-content {
+    background: #e7e7e7;
+    color: black;
+    padding: 6px 12px; /* ✅ Minimal padding */
+    border-radius: 18px; /* ✅ Circular look */
+    border-bottom-right-radius: 4px;
+    font-size: 14px; /* ✅ Smaller text */
+}
+
+/* Timestamp - Incoming (Left Side) */
+.incoming .timestamp {
+    font-size: 10px;
+    color: #d1d1d1; /* ✅ Greenish for incoming */
+    display: block;
+    text-align: right;
+    margin-top: 3px;
+}
+
+/* Timestamp - Outgoing (Right Side) */
+.outgoing .timestamp {
+    font-size: 10px;
+    color: #333; /* ✅ Reddish for outgoing */
+    display: block;
+    text-align: right;
+    margin-top: 3px;
+}
+
+.welcome-message {
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 20px auto;
+    padding: 10px;
+    max-width: 80%;
+    background: #f3f3f3;
+    border-radius: 8px;
+}
